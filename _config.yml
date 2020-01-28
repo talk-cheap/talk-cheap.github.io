@@ -1,1 +1,53 @@
-theme: jekyll-theme-cayman
+# Basic settings
+title: Talk is Cheap
+description: "分享知识，提高技能。"
+keyword: "Python, DevOps, Cloud Native"
+
+url: "https://talk-cheap.github.io"
+baseurl: "" # such as "/blog"
+
+
+settings:
+  theme-img:  # leave it blank if you want to use color only
+  theme-color: "#1E9F75"
+  favicon-ico: /img/favicon.ico
+  favicon-png: /img/favicon.png
+
+
+owner: 
+  name: "Toby Qin"
+  email: toby.qin@live.com
+  github: tobyqin
+  zhihu:
+  coding:
+
+
+# Build settings  
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude: [".idea","README.md"]
+
+# Gems
+plugins: [jekyll-paginate]
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Shanghai
+
+# Defaults for posts
+defaults:
+    scope: 
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Toby Qin"
+      header-img: "img/zhihu.jpg"
+
+# Comments 
+comments :
+  provider : gitment
+
+# Links to include in footer navigation
