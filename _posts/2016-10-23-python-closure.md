@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 说说Python中的闭包 - Closure
 categories: Tech
 tags: [python,python closure]
