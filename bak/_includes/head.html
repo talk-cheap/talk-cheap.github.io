@@ -1,0 +1,44 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword"  content="{{site.keyword}}">
+    <meta name="description" content="{{ site.description }}">
+    <link rel="shortcut icon" href="{{site.settings.favicon-ico | | prepend: site.baseurl}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{site.settings.favicon-png | | prepend: site.baseurl}}">
+    <link rel="alternate" type="application/rss+xml"  href="feed.xml" title="Pytips">
+
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }} - {{ site.description}}{% endif %}</title>
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ "/css/pytips.css" | prepend: site.baseurl }}">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//cdn.bootcss.com/highlight.js/9.4.0/styles/github.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ "/search/css/cb-search.css" | prepend: site.baseurl }}">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .intro-header {
+        background-color: {% if site.settings.theme-color  %}{{ site.settings.theme-color }}{% else %}#0566C5{% endif %};
+        {% if site.settings.theme-img %}background-image: url('{{ site.baseurl }}/{{ site.settings.theme-img }}'){% endif %}
+        {% if page.header-img %}background-image: url('{{ site.baseurl }}/{{ page.header-img }}'){% endif %}
+        }
+    </style>
+</head>

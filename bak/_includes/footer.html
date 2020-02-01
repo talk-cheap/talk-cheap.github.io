@@ -1,0 +1,144 @@
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                    {% if site.owner.zhihu %}
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/{{ site.owner.zhihu }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.owner.email %}
+                    <li>
+                        <a href="mailto:{{ site.owner.email }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.owner.github %}
+                    <li>
+                        <a target="_blank" href="https://github.com/{{ site.owner.github }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.owner.coding %}
+                    <li>
+                        <a target="_blank" href="https://coding.net/u/{{ site.owner.coding }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    <li>
+                        <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+                        <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }} & Hosted
+                    by <a href="https://pages.github.com" style="font-weight: bold">Github Pages</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="{{ "/js/pytips.js " | prepend: site.baseurl }}"></script>
+
+
+<!-- Back to Top cCmponent -->
+<script src="{{ "/js/backtop.js" | prepend: site.baseurl }}"></script>
+
+<div id="back-top">
+    <a href="#top" title="Back to top"></a>
+</div>
+
+<!-- Highlight.js -->
+<script>
+    async("//cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js", function () {
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+<!--Search Component-->
+<div class="cb-search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
+      opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control cb-search-content" id="cb-search-content" style="position: fixed; top: 60px"
+           placeholder="文章标题 日期 标签">
+
+    <div style="position: fixed; top: 16px; right: 16px;">
+        <img src="/search/img/cb-close.png" id="cb-close-btn"/>
+    </div>
+</div>
+
+<script src="{{ "/search/js/bootstrap3-typeahead.min.js" | prepend: site.baseurl }}"></script>
+<script src = "{{ "/search/js/cb-search.js" | prepend: site.baseurl }}" ></script>
+
+<!--Fix Code Block Layout-->
+<script>
+    $("code").each(function () {
+        var content = $(this).html().replace(/\n/g, "\n</li><li>");
+        if (content.indexOf('<li>') == -1) {
+        } else {
+            $(this).html("<ul><li>" + content.substring(0, content.length - 4) + "</ul>");
+        }
+    });
+</script>
+
+<!-- Tag Cloud Component -->
+<script src="{{ "/js/jquery.tagcloud.js" | prepend: site.baseurl }}"></script>
+
+<script language="javascript">
+$.fn.tagcloud.defaults = {
+    //size: {start: 1, end: 1, unit: 'em'},
+    color: {start: '#bbbbee', end: '#0085a1'},
+};
+$(function () {
+    $('#tag_cloud a').tagcloud();
+});
+</script>

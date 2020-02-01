@@ -1,12 +1,12 @@
 ---
 layout: page
-description: "分享知识，提高技能。"
+description: "纸上得来终觉浅，绝知此事要躬行。"
 ---
 
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">            
+        <h2 class="post-title">
             {{ post.title }}
         </h2>
         {% if post.subtitle %}
@@ -15,12 +15,17 @@ description: "分享知识，提高技能。"
         </h3>
         {% endif %}
         <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:140 }}
+            {% if post.lang == 'en' %}
+                {{ post.content | strip_html | truncate:300 }}
+            {% else %}
+                {{ post.content | strip_html | truncate:200 }}
+            {% endif %}
         </div>
     </a>
-    <p class="post-meta">Posted on {{ post.date | date: "%Y-%m-%d" }}</p>
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
 </div>
-
 <hr>
 {% endfor %}
 

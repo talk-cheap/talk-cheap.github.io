@@ -1,8 +1,11 @@
 ---
+layout: post
 title: 谢谢，我们很忙
+subtitle: 忙也是只是懒惰的理由
 categories: [Life]
 tags: [comics,geek]
 date: 2020-01-01
+header-style: text
 ---
 
 ![too-busy-to-improve](https://tobyqin.github.io/images/too-busy-to-improve.png)

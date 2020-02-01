@@ -1,21 +1,16 @@
 ---
-layout: page    
-header-img: "img/brown.jpg"  
-description: "不明力量入侵，你想要访问的页面被摧毁了。"
-permalink: 404.html  
+layout: default
+title: 404
+hide-in-nav: true
+description: "Nothing found here :("
+header-img: "img/404-bg.jpg"
+permalink: /404.html
 ---
 
-<pre>         _____                                  _____      
-        /    /                                 /    /      
-       /    /                                 /    /       
-      /    /                                 /    /        
-     /    /             .-''` ''-.          /    /         
-    /    /  __        .'          '.       /    /  __      
-   /    /  |  |      /              `     /    /  |  |     
-  /    '   |  |     '                '   /    '   |  |     
- /    '----|  |---. |         .-.    |  /    '----|  |---. 
-/          |  |   | .        |   |   . /          |  |   | 
-'----------|  |---'  .       '._.'  /  '----------|  |---' 
-           |  |       '._         .'              |  |     
-          /____\         '-....-'`               /____\    
-                                                        </pre>
+
+<!-- Page Header -->
+{% include intro-header.html type="page" short='true' %}
+
+<script>
+	document.body.classList.add('page-fullscreen');
+</script>

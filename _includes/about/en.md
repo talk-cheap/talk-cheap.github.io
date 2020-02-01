@@ -1,0 +1,1 @@
+> Among any three people walking, I will find something to learn for sure. Choose those who are good, and change those who are not.
